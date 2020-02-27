@@ -1,3 +1,0 @@
-feature-01-setup
-feature-02-events
-feature-03-attendance
