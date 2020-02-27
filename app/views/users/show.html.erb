@@ -1,0 +1,11 @@
+<%= provide(:title, "Users") %>
+
+<div class="row">
+    <ul>
+        <% if @attending_events.none? %>
+            <li>There is no events currently</li>
+        <% else %>
+            <%= render @attending_events  %>
+        <% end %>
+    </ul>
+</div>
