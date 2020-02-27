@@ -1,15 +1,27 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+  
+  root 'static_pages#home'
+  get    '/help',    to: 'static_pages#help'
+  get    '/about',   to: 'static_pages#about'
 
-  get 'static_pages/help'
+  # user
+  resources :users, only: [:index, :show, :new, :create] do
+    resources :invites, only: [:index, :edit, :update]
+  end
 
-  get 'static_pages/about'
+  # events
+  post '/events/:event_id/invites/new' => 'invites#create'
+  resources :events, only: [:index, :show, :new, :create, :destroy] do
+    resources :invites, only: :new
+  end
 
-  get 'users/new'
+  # invites
+  resources :invites
+  
+  # session
+  get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
-  get 'users/create'
-
-  get 'users/sshow'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
