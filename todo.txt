@@ -1,0 +1,3 @@
+tests
+refactor
+attending? on the events list
