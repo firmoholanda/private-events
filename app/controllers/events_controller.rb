@@ -13,6 +13,17 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    unless (@event = Event.find_by(id: params[:id]))
+      redirect_to user_path(current_user)
+    end
+  end
+
+  def index
+    @prev_events = Event.past
+    @upcoming_events = Event.upcoming
+  end
+
   private
     def event_params
       params.require(:event).permit(:description)
