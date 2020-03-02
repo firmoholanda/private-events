@@ -25,6 +25,10 @@ gem 'bootstrap-will_paginate', '1.0.0'
 # Use for improved styling
 gem 'bootstrap-sass', '3.4.1'
 gem 'jquery-rails', '4.3.1'
+# Use for testing
+gem 'rubocop'
+gem "rspec-rails"
+gem 'rails-controller-testing'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
