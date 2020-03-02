@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    #keep_stored_location
+    keep_stored_location
   end
 
   def create
@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     if @user
       log_in @user
       params[:session][:remember_me] == "1" ? remember(@user) : forget(@user)
-      #flash.now[:success] = "you ate loged in, welcome back!"
       #redirect_to events_path
       redirect_to root_path
     else
