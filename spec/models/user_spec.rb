@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  def setup
-    @user = User.new(name: "example user", email: "example@example.com")
+
+  before :each do
+    @user = User.create(name: "example user", email: "example@example.com")
   end
 
   it "user should be valid" do
