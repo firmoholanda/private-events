@@ -1,6 +1,6 @@
 
 # create defalt user
-User.create!(name: "example user", email: "example@example.com" )
+User.create!(name: "example user", email: "example@example.com")
 
 49.times do |n|
   name = Faker::Name.name
