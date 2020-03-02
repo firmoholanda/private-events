@@ -7,12 +7,12 @@ RSpec.describe User, type: :model do
   end
 
   it "user should be valid" do
-    assert @user.valid?
+    expect(user.valid?).to be(true)
   end
 
   it "name should be present" do
     @user.name = "   "
-    assert_not @user.valid?
+    expect(user.valid?).to be(false)
   end
 
   it "email should be present" do
