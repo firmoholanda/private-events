@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "welcome to the private-events app!"
-      #redirect_to events_path
-      redirect_to root_path
+      redirect_to events_path
     else
       render :new
     end
