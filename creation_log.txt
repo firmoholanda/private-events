@@ -20,8 +20,6 @@ add_foreign_key :events, :users, column: :host_id
 rails generate model Invite reply:string
 
 
-
-
 # testing
 
 add gem "rspec-rails" to gemfile

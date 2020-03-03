@@ -6,7 +6,6 @@
       <th width="15%" scope="col">when?</th>
       <th width="15%" scope="col">event name</th>
       <th width="70%" scope="col">description</th>
-      <th width="5%" scope="col">attending?</th>
     </tr>
   </thead>
   <tbody>
@@ -17,8 +16,6 @@
         <td class=<%= class_event %>><%= time_ago_in_words(event.event_date) %></td>
         <td><%= link_to event.name, event %></td>
         <td><%= event.description %></td>
-        
-        <td></td>
       </tr>
   <% end %>
   </tbody>
