@@ -21,13 +21,13 @@ ruby, rails, bootstrap, jquery, faker, bcrypt, will_paginate and git was used on
 
 ## 🚀 the project
 
-this project can be found in https://github.com/firmoholanda/private-events
+this project can be found in https://github.com/roodzfernando/private-events
 
 
 ### ✨ [live version](https://private-events-firmoholanda.herokuapp.com/)
 
-<a href="https://private-events-firmoholanda.herokuapp.com/" target="_blank">
-    <img alt="app image" src="https://github.com/firmoholanda/private-events/blob/development/app/assets/images/screenshot.png"/>
+<a href="https://private-events-roodzfernando.herokuapp.com/" target="_blank">
+    <img alt="app image" src="https://github.com/froodzfernando/private-events/tree/pre-production/app/assets/images/app-image.png"/>
 </a>
 
 
