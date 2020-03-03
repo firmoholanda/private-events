@@ -16,7 +16,7 @@
 
 module ControllerHelpers
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  #fixtures :all
+  # fixtures :all
 
   # Returns true if a test user is logged in, and false otherwise.
   def is_test_user_logged_in?
@@ -25,8 +25,8 @@ module ControllerHelpers
 
   # Logs in a test user.
   def log_in_as(user, options = {})
-    password = options[:password] || "password"
-    remember_me = options[:remember_me] || "1"
+    password = options[:password] || 'password'
+    remember_me = options[:remember_me] || '1'
     if integration_test?
       post login_path, session: { email: user.email,
                                   password: password,
@@ -37,14 +37,14 @@ module ControllerHelpers
   end
 
   # Add more helper methods to be used by all tests here...
-  #include ApplicationHelper
+  # include ApplicationHelper
 
   private
 
-    # Returns true inside an integration test.
-    def integration_test?
-      defined?(post_via_redirect)
-    end
+  # Returns true inside an integration test.
+  def integration_test?
+    defined?(post_via_redirect)
+  end
 end
 
 RSpec.configure do |config|

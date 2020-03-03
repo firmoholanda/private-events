@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :show, :destroy]
+  before_action :logged_in_user, only: %i[index show destroy]
 
   def index
     @users = User.paginate(page: params[:page])
@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "welcome to the private-events app!"
-      #redirect_to events_path
+      flash[:success] = 'welcome to the private-events app!'
+      # redirect_to events_path
       redirect_to root_path
     else
       render :new
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
 end

@@ -8,9 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    unless (@event = Event.find_by(id: params[:id]))
-      redirect_to user_path(current_user)
-    end
+    redirect_to user_path(current_user) unless (@event = Event.find_by(id: params[:id]))
   end
 
   def new
@@ -20,7 +18,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events_as_host.build(event_params)
     if @event.save
-      flash[:success] = "event created!"
+      flash[:success] = 'event created!'
       redirect_to @event
     else
       render :new
@@ -29,13 +27,13 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    flash[:success] = "event deleted"
+    flash[:success] = 'event deleted'
     redirect_to request.referrer || root_url
   end
 
   private
 
-    def event_params
-      params.require(:event).permit(:name, :description, :event_date)
-    end
+  def event_params
+    params.require(:event).permit(:name, :description, :event_date)
+  end
 end
