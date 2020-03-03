@@ -27,7 +27,7 @@ this project can be found in https://github.com/roodzfernando/private-events
 ### ✨ [live version](https://private-events-firmoholanda.herokuapp.com/)
 
 <a href="https://private-events-roodzfernando.herokuapp.com/" target="_blank">
-    <img alt="app image" src="https://github.com/froodzfernando/private-events/tree/pre-production/app/assets/images/app-image.png"/>
+    <img alt="app image" src="https://github.com/RoodzFernando/private-events/blob/pre-production/app/assets/images/app-image.png"/>
 </a>
 
 
