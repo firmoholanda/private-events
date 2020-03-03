@@ -9,8 +9,6 @@ RSpec.describe StaticPagesController, type: :controller do
       expect(response).to render_template("home")
     end
 
-
-
       it 'should return the help page' do
         get :home
         expect(response).to render_template("home")
@@ -24,10 +22,6 @@ RSpec.describe StaticPagesController, type: :controller do
 end
 
 RSpec.describe "routes to the widgets controller", :type => :routing do
-  it "Should get the signup page" do
-    expect(:get => signup_path).
-      to route_to(:controller => "users", :action => "new")
-  end
 
   it "should get the login page" do
     expect(:get => login_path).
