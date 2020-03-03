@@ -1,21 +1,20 @@
 require 'rails_helper'
 
-class EventsControllerTest < ActionDispatch::IntegrationTest
+RSpec.describe EventsController, type: :controller do
 
-  def setup
+  before :each do
     @event = events(:one)
     @non_host = users(:two)
   end
 
-  test "should get create" do
+  it "should get create" do
     get events_create_url
-    assert_response :success
+    expect(response).to eql(:success)
   end
 
-  test "should redirect show when not logged in" do
+  it "should redirect show when not logged in" do
     get :show, id: @event
-    assert_redirected_to login_url
+    #assert_redirected_to login_url
   end
-
 
 end
