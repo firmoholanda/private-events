@@ -15,7 +15,7 @@
       <tr>
         <td class="host_name"><%= event.host.name %></td>
         <td class=<%= class_event %>><%= event.event_date.strftime("%d/%m/%Y") %></td>
-        <td><%= time_ago_in_words(event.event_date) %></td>
+        <td class=<%= class_event %>><%= time_ago_in_words(event.event_date) %></td>
         <td><%= event.description %></td>
         <td><%= link_to "show", event %></td>
         <td></td>
