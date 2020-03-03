@@ -1,9 +1,23 @@
 require 'rails_helper'
 
-class SessionsControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get sessions_new_url
-    assert_response :success
+RSpec.describe SessionsController, type: :controller do
+
+  before :each do
+    @user = User.new(name: "example user", email: "example@example.com")      
+  end
+
+  describe "#new" do
+    it "should get new" do
+      get :new
+      assert_response :success
+    end
+  end
+
+  describe "#destroy" do
+    it "should delete destroy" do
+      delete :destroy
+      assert_response :redirect
+    end
   end
 
 end

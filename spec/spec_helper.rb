@@ -15,13 +15,36 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 module ControllerHelpers
-  def login(user)
-    session[:user_id] = user.id
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  #fixtures :all
+
+  # Returns true if a test user is logged in, and false otherwise.
+  def is_test_user_logged_in?
+    !session[:user_id].nil?
   end
 
-  def expect_redirect_to_login
-    expect(response).to redirect_to(:login)
+  # Logs in a test user.
+  def log_in_as(user, options = {})
+    password = options[:password] || "password"
+    remember_me = options[:remember_me] || "1"
+    if integration_test?
+      post login_path, session: { email: user.email,
+                                  password: password,
+                                  remember_me: remember_me }
+    else
+      session[:user_id] = user.id
+    end
   end
+
+  # Add more helper methods to be used by all tests here...
+  #include ApplicationHelper
+
+  private
+
+    # Returns true inside an integration test.
+    def integration_test?
+      defined?(post_via_redirect)
+    end
 end
 
 RSpec.configure do |config|

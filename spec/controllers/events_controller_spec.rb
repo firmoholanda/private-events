@@ -3,18 +3,24 @@ require 'rails_helper'
 RSpec.describe EventsController, type: :controller do
 
   before :each do
-    @event = events(:one)
-    @non_host = users(:two)
+    @user = User.new(name: "example user", email: "example@example.com")    
+    @non_host = User.new(name: "example user 02 non host", email: "example2@example.com")
+    @event = @user.events_as_host.build(name: "example event", description: "lorem ipsum.", event_date: 1.week.from_now)
   end
 
-  it "should get create" do
-    get events_create_url
-    expect(response).to eql(:success)
+  describe "#new" do
+    it "should redirect new when not logged in" do
+      get :new
+      assert_redirected_to login_url
+    end
   end
 
-  it "should redirect show when not logged in" do
-    get :show, id: @event
-    #assert_redirected_to login_url
+  describe "#create" do
+    it "should redirect create when not logged in" do
+      post :create
+      assert_redirected_to login_url
+    end
   end
+
 
 end
