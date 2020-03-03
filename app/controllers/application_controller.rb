@@ -8,9 +8,10 @@ class ApplicationController < ActionController::Base
   # Confirms a logged in user.
   def logged_in_user
     return if logged_in?
-      store_location
-      flash[:danger] = 'please log in.'
-      redirect_to login_url
+
+    store_location
+    flash[:danger] = 'please log in.'
+    redirect_to login_url
   end
 
   # Confirms a current user as the host of the target event or invite.
@@ -18,15 +19,17 @@ class ApplicationController < ActionController::Base
     @event = current_user.events_as_host.find_by(id: params[:id])
     @event ||= current_user.events_as_host.find_by(id: params[:event_id])
     return unless @event.nil?
-      flash[:danger] = 'access denied: you are not the host.'
-      redirect_to root_url
+
+    flash[:danger] = 'access denied: you are not the host.'
+    redirect_to root_url
   end
 
   # Confirms a current user as a guest of the target invite.
   def guest_user
     return if current_user.id == params[:user_id].to_i
-      flash[:danger] = 'access denied: you are not the correct user.'
-      redirect_to root_url
+
+    flash[:danger] = 'access denied: you are not the correct user.'
+    redirect_to root_url
   end
 
   # Confirms a current user as a host or guest of the target invite.
