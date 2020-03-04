@@ -7,7 +7,7 @@
       <% if @events_as_host.none? %>
         <li>currently hosting no events.</li>
       <% end %>
-      <%= render @events_as_host %>
+      <%= render "user_events", events: @events_as_host %>
     </ol>
   </div>
   <div class="col-md-4">
@@ -16,7 +16,7 @@
       <% if @attending_events.none? %>
         <li>currently attending no events.</li>
       <% end %>
-      <%= render @attending_events %>
+      <%= render "user_events", events: @attending_events %>
     </ol>
   </div>
 </div>

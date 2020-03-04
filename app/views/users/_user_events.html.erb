@@ -1,0 +1,12 @@
+<p class="font-weight-bold font-italic">upcoming events</p>
+<% if events.upcoming.any? %>
+  <%= render events.upcoming %>
+<% else %>
+  <p>no events</p>
+<% end %>
+<p class="font-weight-bold font-italic">past events</p>
+<% if events.past.any? %>
+  <%= render events.past %>
+<% else %>
+  <p>no events</p>
+<% end %>
