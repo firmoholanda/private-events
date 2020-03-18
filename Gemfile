@@ -16,7 +16,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use Faker for sample data
-gem 'faker', '1.7.3'
+gem 'faker', '2.10.2'
 # Use will_paginate for pagination
 gem 'will_paginate', '3.1.0'
 # Configure it to use Bootstrap's pagination styles
