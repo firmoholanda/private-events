@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use Faker for sample data
 gem 'faker', '1.7.3'
 # Use will_paginate for pagination
-gem 'will_paginate', '3.1.0'
+gem 'will_paginate', '3.3.0'
 # Configure it to use Bootstrap's pagination styles
 gem 'bootstrap-will_paginate', '1.0.0'
 # Use for improved styling
